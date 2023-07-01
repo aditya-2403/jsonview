@@ -9,6 +9,9 @@ import JsonView from "./JsonView";
 import db from "./firebase";
 import Ajv from "ajv";
 import {CheckCircle} from '@mui/icons-material';
+import Navbar from "./Navbar";
+import Footer from "./footer";
+import About from "./About";
 
 const ajv = new Ajv();
 
@@ -92,11 +95,13 @@ const App = () => {
 
   return (
     <Router>
+      <Navbar/>
       <div className="App">
         <ToastContainer position="top-center" />
         <Routes>
           <Route exact path="/" element={<JsonForm onSave={handleSave} />} />
           <Route path="/view/:id" element={<JsonView />} />
+          <Route path="/about" element={<About/>}/>
         </Routes>
         <Modal show={showModal} onHide={handleCloseModal}>
           <Modal.Header closeButton>
@@ -122,6 +127,7 @@ const App = () => {
           </Modal.Footer>
         </Modal>
       </div>
+      <Footer/>
     </Router>
   );
 };
