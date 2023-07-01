@@ -8,6 +8,7 @@ import JsonForm from "./JsonForm";
 import JsonView from "./JsonView";
 import db from "./firebase";
 import Ajv from "ajv";
+import {CheckCircle} from '@mui/icons-material';
 
 const ajv = new Ajv();
 
@@ -44,7 +45,7 @@ const App = () => {
         .then((docRef) => {
           // Generate a unique link based on the current domain
           const link = `${window.location.origin}/view/${docRef.id}`;
-          console.log("JSON content saved. Link:", link);
+          // console.log("JSON content saved. Link:", link);
 
           // Display a success toast message
           // toast.success("JSON content saved!", {
@@ -99,7 +100,7 @@ const App = () => {
         </Routes>
         <Modal show={showModal} onHide={handleCloseModal}>
           <Modal.Header closeButton>
-            <Modal.Title>JSON File Hosted</Modal.Title>
+            <Modal.Title>JSON File Hosted <CheckCircle style={{ color: " #00b300", fontSize: "30px", marginTop:"-5px" }}/> </Modal.Title>
           </Modal.Header>
           <Modal.Body>
             <Form.Group controlId="modalContent">

@@ -11,14 +11,14 @@ const JsonForm = ({ onSave }) => {
   };
 
   return (
-    <Container>
+    <Container className="form-container">
       <Row className="justify-content-center">
         <Col xs={12} md={8} lg={6}>
-          <h2 className="text-center mb-4">JSON Hosting</h2>
+          <h2 className="text-center mb-4">JsonView - JSON Hosting</h2>
           <Form onSubmit={handleSubmit}>
             <Form.Group controlId="jsonContent">
-              <Form.Label>JSON Content</Form.Label>
-              <Form.Control
+              <Form.Control className="json-form"
+              placeholder="Enter Valid JSON here..."
               required
                 as="textarea"
                 rows={6}
@@ -27,7 +27,7 @@ const JsonForm = ({ onSave }) => {
               />
             </Form.Group>
             <div className="text-center">
-              <Button className="mt-5" variant="primary" type="submit">
+              <Button className="submit-btn mt-3" variant="primary" type="submit">
                 Submit
               </Button>
             </div>
